@@ -21,7 +21,7 @@ Navegador web moderno (cualquier versión reciente de Chrome, Firefox, Safari, E
 ## Instalación / Uso
 Clonar el repositorio (o descargarlo):
 
-git clone https://github.com/joandavid96/DesafioProgramacion.git
+git clone https://github.com/joandavid96/amigo-secreto-alura.git
 Abrir el archivo index.html en tu navegador preferido.
 
 ## Interacción:
