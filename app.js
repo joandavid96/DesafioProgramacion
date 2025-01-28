@@ -1,4 +1,4 @@
-let listaAmigos = [];
+let listaAmigos = ["Rolando", "Alex"];
 let contador = 0;
 
 //let textoAmigo = document.getElementById('amigo').value; 
@@ -19,12 +19,17 @@ function verificarNombre(amigo) {
     }
 
     // 3. La tercera validación es verificar si el nombre ya se encontraba en la lista
-    //if ()
-
+    if (listaAmigos.map(amigos => amigos.toLowerCase()).includes(amigo.toLowerCase())) {
+        alert(`El nombre "${amigo}" ya fue agregado previamente.`);
+        return;
+    }
     // Si cae aquí es que pasa todas las validaciones y es un nombre correcto
     return true;
   }
 
+function limpiarCaja() {
+    document.querySelector('#amigo').value = '';
+}
 
 function agregarAmigo() {
     const amigo = document.getElementById("amigo").value; // capturando el valor del campo de entrada
@@ -32,5 +37,7 @@ function agregarAmigo() {
     if (!verificarNombre(amigo)) {;
         return;
     }
+    listaAmigos.push(amigo); // agregar el nombre a la lista
+    limpiarCaja(); // limpiar el campo de entrada
 }
   
