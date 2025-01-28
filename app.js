@@ -1,7 +1,4 @@
-let listaAmigos = ["Rolando", "Alex"];
-let contador = 0;
-
-//let textoAmigo = document.getElementById('amigo').value; 
+let listaAmigos = ["Rolando", "Alex"]; // lista de amigos
 
 function verificarNombre(amigo) {
     //const valor = document.getElementById('amigo').value.trim(); // se obtiene el valor del campo de texto del html
@@ -38,10 +35,25 @@ function agregarAmigo() {
         return;
     }
     listaAmigos.push(amigo); // agregar el nombre a la lista
+    
+    // ahora tenemos que mostrar los nombres en el html
+    const lista = document.getElementById('listadoAmigos');
+    const li = document.createElement('li'); // creamos una viñeta para mostrar cada nombre
+    li.textContent = amigo;
+    lista.appendChild(li);
+    
     limpiarCaja(); // limpiar el campo de entrada
 }
 
 function sortearAmigo() {
+    // Lo 1ro es verificar si hay más de un amigo en la lista
+    if (listaAmigos.length <= 1) {
+        alert("Necesitas al menos 2 amigos para hacer un sorteo.");
+        return; // Detenemos la función si no hay suficientes amigos
+    }
 
+    // Si hay suficientes amigos, se elige uno al azar
+    const amigoGanador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
+    alert(`El amigo sorteado es: ${amigoGanador}`);
 }
   
