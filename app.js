@@ -40,4 +40,8 @@ function agregarAmigo() {
     listaAmigos.push(amigo); // agregar el nombre a la lista
     limpiarCaja(); // limpiar el campo de entrada
 }
+
+function sortearAmigo() {
+
+}
   
