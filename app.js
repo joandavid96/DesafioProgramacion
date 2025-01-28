@@ -41,7 +41,7 @@ function agregarAmigo() {
     const li = document.createElement('li'); // creamos una viñeta para mostrar cada nombre
     li.textContent = amigo;
     lista.appendChild(li);
-
+    resultado.innerHTML = ""; // limpio el resultado anterior
     limpiarCaja(); // limpiar el campo de entrada
 }
 
