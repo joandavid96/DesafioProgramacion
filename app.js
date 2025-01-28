@@ -1,4 +1,4 @@
-let listaAmigos = ["Rolando", "Alex"]; // lista de amigos
+let listaAmigos = []; // lista de amigos
 
 function verificarNombre(amigo) {
     //const valor = document.getElementById('amigo').value.trim(); // se obtiene el valor del campo de texto del html
@@ -31,7 +31,7 @@ function limpiarCaja() {
 function agregarAmigo() {
     const amigo = document.getElementById("amigo").value; // capturando el valor del campo de entrada
     // Antes de agregar amigo, primero verificamos las validaciones
-    if (!verificarNombre(amigo)) {;
+    if (!verificarNombre(amigo)) {
         return;
     }
     listaAmigos.push(amigo); // agregar el nombre a la lista
@@ -41,7 +41,7 @@ function agregarAmigo() {
     const li = document.createElement('li'); // creamos una viñeta para mostrar cada nombre
     li.textContent = amigo;
     lista.appendChild(li);
-    
+
     limpiarCaja(); // limpiar el campo de entrada
 }
 
@@ -53,7 +53,16 @@ function sortearAmigo() {
     }
 
     // Si hay suficientes amigos, se elige uno al azar
-    const amigoGanador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
-    alert(`El amigo sorteado es: ${amigoGanador}`);
+    const amigoGanador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)]; 
+    
+    // Mostramos el amigo ganador en el HTML
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>El amigo sorteado es: <strong>${amigoGanador}</strong></li>`;
+
+    // Limpiar el registro de nombres anteriores
+    listaAmigos = []; // Vacía el array de amigos
+    const lista = document.getElementById('listadoAmigos');
+    lista.innerHTML = ''; // Vacía la lista en el HTML
+    //alert(`El amigo sorteado es: ${amigoGanador}`);
 }
   
